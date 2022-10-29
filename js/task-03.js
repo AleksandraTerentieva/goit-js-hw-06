@@ -15,18 +15,12 @@ const images = [
 
 const gallery = document.querySelector(".gallery");
 
-// OPTION_1
-
 const arr = [];
 
 for (let i = 0; i < images.length; i += 1) {
-  const newItem = document.createElement("li");
-  const newImg = document.createElement("img");
-  newImg.classList.add("size");
-  newImg.setAttribute("src", images[i].url);
-  newImg.setAttribute("alt", images[i].alt);
-  newItem.append(newImg);
+  const newItem = `<li><img class="size" src="${images[i].url}" alt="${images[i].alt}"></li>`;
   console.log(newItem);
   arr.push(newItem);
 }
-gallery.append(...arr);
+console.log(arr);
+gallery.insertAdjacentHTML("beforeend", arr.join(""));
